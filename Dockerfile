@@ -1,4 +1,10 @@
-FROM python:3.12
+FROM alpine
 LABEL authors="Herrmandel"
 
-ENTRYPOINT ["top", "-b"]
+RUN apk add --no-cache bash
+
+
+COPY entrypoint.sh .
+RUN chmod +x entrypoint.sh
+
+ENTRYPOINT ["entrypoint.sh" ]
