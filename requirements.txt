@@ -1,0 +1,6 @@
+SpeechRecognition
+numpy
+transformers
+torch
+tensorflow
+pandas
