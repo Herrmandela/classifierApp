@@ -17,6 +17,6 @@ LABEL authors="Herrmandel"
 ADD liveClassifier.py .
 
 #RUN brew install python-tk
-RUN pip3 install SpeechRecognition #Numpy Transformers
+RUN pip3 install SpeechRecognition numpy transformers torch tensorflow
 
 CMD ["python", "./liveClassifier.py"]
