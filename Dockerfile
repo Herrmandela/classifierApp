@@ -1,12 +1,22 @@
+#FROM alpine
+#LABEL authors="Herrmandel"
+
+#RUN apk add --no-cache bash
+
+#WORKDIR /classifierApp
+
+#COPY entrypoint.sh .
+#RUN chmod +x entrypoint.sh
+
+#ENTRYPOINT ["/classifierApp/entrypoint.sh" ]
+#CMD ['run']
+
 FROM python:3.12
 LABEL authors="Herrmandel"
 
-RUN apk add --no-cache bash
+ADD liveClassifier.py .
 
-WORKDIR /classifierApp
+#RUN brew install python-tk
+RUN pip3 install SpeechRecognition #Numpy Transformers
 
-COPY entrypoint.sh .
-RUN chmod +x liveClassifier.py
-
-ENTRYPOINT ["/classifierApp/liveClassifier.py" ]
-CMD ['run']
+CMD ["python", "./liveClassifier.py"]
