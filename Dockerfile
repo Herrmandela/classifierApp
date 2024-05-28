@@ -16,6 +16,9 @@ FROM ubuntu as builder
 FROM python:3.12
 
 LABEL authors="Herrmandel"
+LABEL org.opencontainers.image.source=https://github.com/Herrmandela/classifierApp
+LABEL org.opencontainers.image.description="ClassifierAPP"
+LABEL org.opencontainers.image.licenses=MIT
 
 RUN apt-get update &&\
     apt-get -y install sudo
